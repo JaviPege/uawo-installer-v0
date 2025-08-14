@@ -32,15 +32,22 @@ export default function UAWOInstaller() {
         {/* Hero Section */}
         <main className="p-4 md:p-6">
           <div className="mb-12 text-center max-w-4xl mx-auto">
-            <div className="mb-4 h-16 flex items-center justify-center">
+            <div className="mb-4 h-20 md:h-16 flex items-center justify-center px-2">
               <h1
-                className={`text-4xl font-bold text-foreground transition-all duration-1000 ease-in-out ${
+                className={`text-2xl md:text-4xl font-bold text-foreground transition-all duration-1000 ease-in-out leading-tight ${
                   showFullTitle ? "opacity-100 transform scale-100" : "opacity-100 transform scale-110"
                 }`}
               >
-                {showFullTitle ? "Universal Application Workflow Orchestrator" : "UAWO"}
+                {showFullTitle ? (
+                  <span className="block md:inline">
+                    Universal Application <span className="block md:inline">Workflow Orchestrator</span>
+                  </span>
+                ) : (
+                  "UAWO"
+                )}
               </h1>
             </div>
+
             <p className="text-xl text-muted-foreground mb-8">
               El orquestrador potenciado por IA que agiliza tu negocio
             </p>
