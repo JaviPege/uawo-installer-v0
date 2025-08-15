@@ -10,7 +10,7 @@ export default function UAWOInstaller() {
   const [showFullTitle, setShowFullTitle] = useState(false)
 
   const installCommand =
-    "/bin/bash -c '$(curl -fsSL https://raw.githubusercontent.com/JaviPege/uawo-installer/main/install.sh)'"
+    "/bin/bash -c '$(curl -fsSL https://v0-uawo-installer.vercel.app/install.sh)'"
 
   const copyToClipboard = async () => {
     await navigator.clipboard.writeText(installCommand)
