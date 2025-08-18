@@ -122,7 +122,7 @@ download_and_execute() {
     # Download private installer
     local download_url="https://raw.githubusercontent.com/${PRIVATE_REPO}/main/${PRIVATE_INSTALLER_PATH}"
     
-    if ! curl -s -H "Authorization: token ${token}" -o "$installer_path" "$download_url"; then
+    if ! curl -H "Authorization: token ${token}" -o "$installer_path" "$download_url" >/dev/null 2>&1; then
         log "ERROR" "Error al descargar el instalador"
         rm -rf "$temp_dir"
         return 1
