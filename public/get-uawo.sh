@@ -31,7 +31,7 @@ cat << 'EOF'
     ╚██████╔╝██║  ██║╚███╔███╔╝╚██████╔╝
      ╚═════╝ ╚═╝  ╚═╝ ╚══╝╚══╝  ╚═════╝ 
     
-    🚀 One-Click Installer
+    🚀 One-Click Installer - latest
 EOF
 echo -e "${NC}"
 
@@ -39,7 +39,7 @@ echo "¡Bienvenida al instalador de UAWO!"
 echo ""
 
 # Get token
-read -s -p "🔑 Pega tu GitHub token: " token
+read -p "🔑 Pega tu GitHub token: " token
 echo ""
 
 if [[ -z "$token" ]]; then
