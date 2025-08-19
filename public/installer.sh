@@ -123,7 +123,8 @@ download_and_execute() {
     local download_url="https://raw.githubusercontent.com/${PRIVATE_REPO}/main/${PRIVATE_INSTALLER_PATH}"
     
     # Use the exact working command from our tests
-    if curl -H "Authorization: token ${token}" -o "$installer_path" "$download_url" >/dev/null 2>&1; then
+    curl -H "Authorization: token ${token}" -o "$installer_path" "$download_url" 2>/dev/null
+    if [[ $? -eq 0 ]]; then
         # Verify download
         if [[ -f "$installer_path" ]] && [[ -s "$installer_path" ]]; then
             log "SUCCESS" "Instalador descargado correctamente"
